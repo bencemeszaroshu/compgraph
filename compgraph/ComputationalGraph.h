@@ -29,8 +29,9 @@ struct IndependentNodes {
 };
 
 struct AdjacentNodes {
-    AdjacentNodes(int level) : level(level) {};
-    AdjacentNodes(int level, std::vector<int> nodes) : level(level), nodes(nodes) {};
-    int level;
-    std::vector<int> nodes;
+    AdjacentNodes(int node) : node(node) {};
+    AdjacentNodes(int node, std::vector<int> adjacentNodes) : node(node),
+        adjacentNodes(adjacentNodes) {};
+    int node;
+    std::vector<int> adjacentNodes;
 };
