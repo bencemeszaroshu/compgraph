@@ -2,7 +2,7 @@
 #include "ComputationalGraph.h"
 
 
-ComputationalGraph::ComputationalGraph(std::vector<AdjacenctNodes> nodes)
+ComputationalGraph::ComputationalGraph(std::vector<AdjacentNodes> nodes)
 {
     adjacencyList = nodes;
     bottomNodes = CalculateBottomNodes();
@@ -37,8 +37,8 @@ struct IndependentNodes {
     std::vector<int> nodes;
 };
 
-struct AdjacenctNodes {
-    AdjacenctNodes(int level, std::vector<int> nodes) : level(level), nodes(nodes) {};
+struct AdjacentNodes {
+    AdjacentNodes(int level, std::vector<int> nodes) : level(level), nodes(nodes) {};
     int level;
     std::vector<int> nodes;
 };
