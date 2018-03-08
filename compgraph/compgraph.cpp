@@ -8,6 +8,7 @@
 #include <string>
 
 std::vector<AdjacentNodes> ProcessInput(std::istream& input);
+void PrintIndependentNodes(std::ostream& output, std::vector<IndependentNodes> independentNodes);
 
 int main()
 {
@@ -39,5 +40,18 @@ std::vector<AdjacentNodes> ProcessInput(std::istream& input)
         adjacencyList.push_back(node);
     }
     return adjacencyList;
+}
+
+void PrintIndependentNodes(std::ostream & output, std::vector<IndependentNodes> independentNodes)
+{
+    for (const auto& level : independentNodes)
+    {
+        output << level.depthLevel << ": ";
+        for (const auto& node : level.nodes)
+        {
+            output << node << " ";
+        }
+        output << "\n";
+    }
 }
 
