@@ -1,5 +1,6 @@
 #pragma once
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 struct IndependentNodes;
@@ -17,6 +18,7 @@ private:
     std::vector<AdjacentNodes> adjacencyList;
     std::vector<int> bottomNodes;
     std::vector<IndependentNodes> independentNodes;
+    int numberOfNodes;
     std::vector<int> topNodes;
 };
 
