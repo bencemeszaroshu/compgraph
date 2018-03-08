@@ -1,4 +1,6 @@
 #pragma once
+#include <algorithm>
+#include <iterator>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -31,9 +33,9 @@ struct AdjacentNodes {
 };
 
 struct IndependentNodes {
-    IndependentNodes(int depthLevel) : depthLevel(depthLevel) {};
-    IndependentNodes(int depthLevel, std::vector<int> nodes)
-        : depthLevel(depthLevel), nodes(nodes) {};
-    int depthLevel;
+    IndependentNodes(int depth) : depth(depth) {};
+    IndependentNodes(int depth, std::vector<int> nodes)
+        : depth(depth), nodes(nodes) {};
+    int depth;
     std::vector<int> nodes;
 };

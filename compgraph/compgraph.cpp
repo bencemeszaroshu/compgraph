@@ -46,7 +46,7 @@ void PrintIndependentNodes(std::ostream & output, std::vector<IndependentNodes> 
 {
     for (const auto& level : independentNodes)
     {
-        output << level.depthLevel << ": ";
+        output << level.depth << ": ";
         for (const auto& node : level.nodes)
         {
             output << node << " ";

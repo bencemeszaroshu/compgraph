@@ -7,8 +7,8 @@ ComputationalGraph::ComputationalGraph(std::vector<AdjacentNodes> nodes)
     adjacencyList = nodes;
     numberOfNodes = adjacencyList.size();
     bottomNodes = CalculateBottomNodes();
-    //topNodes = CalculateTopNodes();
-    //independentNodes = CalculateIndependentNodes();
+    topNodes = CalculateTopNodes();
+    independentNodes = CalculateIndependentNodes();
 }
 
 const std::vector<IndependentNodes>& ComputationalGraph::getIndependentNodesByDepth() const
@@ -31,7 +31,36 @@ std::vector<int> ComputationalGraph::CalculateBottomNodes()
 
 std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
 {
-    return std::vector<IndependentNodes>();
+    std::vector<IndependentNodes> result;
+    int depth = 0;
+    result.push_back(IndependentNodes(depth, topNodes));
+    ++depth;
+    int numberOfNodesLeft = numberOfNodes - topNodes.size() - bottomNodes.size();
+    while(numberOfNodesLeft != 0)
+    {
+        IndependentNodes independentNodes(depth);
+        int previousDepth = depth - 1;
+        for (unsigned int i = 0; i < result[previousDepth].nodes.size(); ++i)
+        {
+            int currentNode = result[previousDepth].nodes[i];
+            std::vector<int>& adjacentNodes = adjacencyList[currentNode].adjacentNodes;
+            for (unsigned int j = 0; j < adjacentNodes.size(); ++j)
+            {
+                int node = adjacentNodes[j];
+                auto it1 = std::find(bottomNodes.begin(), bottomNodes.end(), node);
+                auto it2 = std::find(independentNodes.nodes.begin(), independentNodes.nodes.end(), node);
+                if (it1 == bottomNodes.end() && it2 == independentNodes.nodes.end())
+                {
+                    independentNodes.nodes.push_back(node);
+                    --numberOfNodesLeft;
+                }
+            }
+        }
+        result.push_back(independentNodes);
+        ++depth;
+    }
+    result.push_back(IndependentNodes(depth, bottomNodes));
+    return result;
 }
 
 std::vector<int> ComputationalGraph::CalculateTopNodes()
