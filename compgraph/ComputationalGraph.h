@@ -20,18 +20,18 @@ private:
     std::vector<int> topNodes;
 };
 
-struct IndependentNodes {
-    IndependentNodes(int depthLevel) : depthLevel(depthLevel) {};
-    IndependentNodes(int depthLevel, std::vector<int> nodes)
-        : depthLevel(depthLevel), nodes(nodes) {};
-    int depthLevel;
-    std::vector<int> nodes;
-};
-
 struct AdjacentNodes {
     AdjacentNodes(int node) : node(node) {};
     AdjacentNodes(int node, std::vector<int> adjacentNodes) : node(node),
         adjacentNodes(adjacentNodes) {};
     int node;
     std::vector<int> adjacentNodes;
+};
+
+struct IndependentNodes {
+    IndependentNodes(int depthLevel) : depthLevel(depthLevel) {};
+    IndependentNodes(int depthLevel, std::vector<int> nodes)
+        : depthLevel(depthLevel), nodes(nodes) {};
+    int depthLevel;
+    std::vector<int> nodes;
 };
