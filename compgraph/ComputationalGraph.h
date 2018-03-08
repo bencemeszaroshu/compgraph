@@ -18,7 +18,7 @@ private:
     std::vector<AdjacentNodes> adjacencyList;
     std::vector<int> bottomNodes;
     std::vector<IndependentNodes> independentNodes;
-    int numberOfNodes;
+    unsigned int numberOfNodes;
     std::vector<int> topNodes;
 };
 

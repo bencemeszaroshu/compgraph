@@ -18,7 +18,15 @@ const std::vector<IndependentNodes>& ComputationalGraph::getIndependentNodesByDe
 
 std::vector<int> ComputationalGraph::CalculateBottomNodes()
 {
-    return std::vector<int>();
+    std::vector<int> bottomNodes;
+    for (unsigned int node = 0; node < numberOfNodes; ++node)
+    {
+        if(adjacencyList[node].adjacentNodes.empty())
+        {
+            bottomNodes.push_back(node);
+        }
+    }
+    return bottomNodes;
 }
 
 std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
