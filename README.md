@@ -13,6 +13,11 @@ Input format
 
 First line is the number of nodes in the graph. Next give the adjacency lists of the nodes line by line with node IDs starting from 0. If a node doesn'h have any adjacent nodes enter an empty line.
 
+Output format
+---------------
+
+The independent nodes by depth.
+
 Example
 ---------
 
