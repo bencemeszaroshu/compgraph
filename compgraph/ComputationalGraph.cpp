@@ -36,7 +36,7 @@ std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
     result.push_back(IndependentNodes(depth, topNodes));
     ++depth;
     int numberOfNodesLeft = numberOfNodes - topNodes.size() - bottomNodes.size();
-    while(numberOfNodesLeft != 0)
+    while(numberOfNodesLeft > 0)
     {
         IndependentNodes independentNodes(depth);
         int previousDepth = depth - 1;
@@ -52,9 +52,9 @@ std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
                 if (it1 == bottomNodes.end() && it2 == independentNodes.nodes.end())
                 {
                     independentNodes.nodes.push_back(node);
-                    --numberOfNodesLeft;
                 }
             }
+            --numberOfNodesLeft;
         }
         result.push_back(independentNodes);
         ++depth;
