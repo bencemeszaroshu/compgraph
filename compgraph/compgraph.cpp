@@ -24,11 +24,21 @@ int main(int argc, char* argv[])
     {
         nodes = ProcessInput(inputFile);
     }
+    else
+    {
+        std::cout << std::endl << "Couldn't open input file" << std::endl;
+        return 1;
+    }
     ComputationalGraph computationalGraph(nodes);
     std::ofstream resultFile(argv[2]);
     if (resultFile.is_open())
     {
         PrintIndependentNodes(resultFile, computationalGraph.getIndependentNodesByDepth());
+    }
+    else
+    {
+        std::cout << std::endl << "Couldn't open output file" << std::endl;
+        return 1;
     }
     return 0;
 }
