@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ComputationalGraph.h"
 
-
 ComputationalGraph::ComputationalGraph(std::vector<AdjacentNodes> nodes)
 {
     adjacencyList = nodes;
@@ -78,7 +77,6 @@ std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
 
 std::vector<int> ComputationalGraph::CalculateTopNodes()
 {
-
     std::unordered_set<int> nodesWithParent;
     for (unsigned int i = 0; i < numberOfNodes; ++i)
     {
