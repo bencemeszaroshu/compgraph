@@ -31,11 +31,24 @@ std::vector<int> ComputationalGraph::CalculateBottomNodes()
 
 std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
 {
+    if (adjacencyList.size() == 0)
+    {
+        return std::vector<IndependentNodes>();
+    }
+    if (adjacencyList.size() == 1)
+    {
+        return std::vector<IndependentNodes>
+        { IndependentNodes(0, std::vector<int>{0}) };
+    }
     std::vector<IndependentNodes> result;
     int depth = 0;
     result.push_back(IndependentNodes(depth, topNodes));
     ++depth;
     int numberOfNodesLeft = numberOfNodes - topNodes.size() - bottomNodes.size();
+    if (numberOfNodesLeft < 0)
+    {
+        return result;
+    }
     while(numberOfNodesLeft > 0)
     {
         IndependentNodes independentNodes(depth);
