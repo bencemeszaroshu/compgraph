@@ -30,11 +30,11 @@ std::vector<int> ComputationalGraph::CalculateBottomNodes()
 
 std::vector<IndependentNodes> ComputationalGraph::CalculateIndependentNodes()
 {
-    if (adjacencyList.size() == 0)
+    if (numberOfNodes == 0)
     {
         return std::vector<IndependentNodes>();
     }
-    if (adjacencyList.size() == 1)
+    if (numberOfNodes == 1)
     {
         return std::vector<IndependentNodes>
         { IndependentNodes(0, std::vector<int>{0}) };
@@ -80,7 +80,7 @@ std::vector<int> ComputationalGraph::CalculateTopNodes()
     std::unordered_set<int> nodesWithParent;
     for (unsigned int i = 0; i < numberOfNodes; ++i)
     {
-        for (int j = 0; j < adjacencyList[i].adjacentNodes.size(); ++j)
+        for (unsigned int j = 0; j < adjacencyList[i].adjacentNodes.size(); ++j)
         {
             nodesWithParent.insert(adjacencyList[i].adjacentNodes[j]);
         }
