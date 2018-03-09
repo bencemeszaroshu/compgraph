@@ -29,7 +29,6 @@ int main(int argc, char* argv[])
         std::cout << std::endl << "Couldn't open input file" << std::endl;
         return 1;
     }
-    inputFile.close();
     ComputationalGraph computationalGraph(nodes);
     std::ofstream resultFile(argv[2]);
     if (resultFile.is_open())
@@ -41,7 +40,6 @@ int main(int argc, char* argv[])
         std::cout << std::endl << "Couldn't open output file" << std::endl;
         return 1;
     }
-    resultFile.close();
     return 0;
 }
 
