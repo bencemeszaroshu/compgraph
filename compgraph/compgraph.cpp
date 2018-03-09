@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "ComputationalGraph.h"
+#include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -10,8 +11,25 @@
 std::vector<AdjacentNodes> ProcessInput(std::istream& input);
 void PrintIndependentNodes(std::ostream& output, std::vector<IndependentNodes> independentNodes);
 
-int main()
+int main(int argc, char* argv[])
 {
+    if (argc < 3)
+    {
+        std::cout << std::endl << "Usage: compgraph.exe <INPUTFILE> <OUTPUTFILE>" << std::endl;
+        return 1;
+    }
+    std::ifstream inputFile(argv[1]);
+    std::vector<AdjacentNodes> nodes;
+    if (inputFile.is_open())
+    {
+        nodes = ProcessInput(inputFile);
+    }
+    ComputationalGraph computationalGraph(nodes);
+    std::ofstream resultFile(argv[2]);
+    if (resultFile.is_open())
+    {
+        PrintIndependentNodes(resultFile, computationalGraph.getIndependentNodesByDepth());
+    }
     return 0;
 }
 
