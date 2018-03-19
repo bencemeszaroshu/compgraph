@@ -38,7 +38,7 @@ Example
 **Input file**
 
 10  
-1  
+6  
 2 3  
 4  
 4  
