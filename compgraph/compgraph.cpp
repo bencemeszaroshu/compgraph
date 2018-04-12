@@ -19,17 +19,17 @@ int main(int argc, char* argv[])
         return 1;
     }
     std::ifstream inputFile(argv[1]);
-    std::vector<AdjacentNodes> nodes;
+    std::vector<AdjacentNodes> adjacencyList;
     if (inputFile.is_open())
     {
-        nodes = ProcessInput(inputFile);
+        adjacencyList = ProcessInput(inputFile);
     }
     else
     {
         std::cout << std::endl << "Couldn't open input file" << std::endl;
         return 1;
     }
-    ComputationalGraph computationalGraph(nodes);
+    ComputationalGraph computationalGraph(adjacencyList);
     std::ofstream resultFile(argv[2]);
     if (resultFile.is_open())
     {
