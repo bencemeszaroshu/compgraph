@@ -70,7 +70,7 @@ std::vector<AdjacentNodes> ProcessInput(std::istream& input)
     return adjacencyList;
 }
 
-void PrintIndependentNodes(std::ostream & output, std::vector<IndependentNodes> independentNodes)
+void PrintIndependentNodes(std::ostream& output, std::vector<IndependentNodes> independentNodes)
 {
     for (const auto& level : independentNodes)
     {
