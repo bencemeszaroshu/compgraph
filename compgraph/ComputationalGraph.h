@@ -23,7 +23,8 @@ private:
     std::vector<int> topNodes;
 };
 
-struct AdjacentNodes {
+struct AdjacentNodes
+{
     AdjacentNodes(int node) : node(node) {};
     AdjacentNodes(int node, std::vector<int> adjacentNodes) : node(node),
         adjacentNodes(adjacentNodes) {};
@@ -31,7 +32,8 @@ struct AdjacentNodes {
     std::vector<int> adjacentNodes;
 };
 
-struct IndependentNodes {
+struct IndependentNodes
+{
     IndependentNodes(int depth) : depth(depth) {};
     IndependentNodes(int depth, std::vector<int> nodes)
         : depth(depth), nodes(nodes) {};
