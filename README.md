@@ -23,17 +23,17 @@ Example
 
 **Graph**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\  
-&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g  
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6  
 &nbsp;&nbsp;&nbsp;/&nbsp;\\&nbsp;&nbsp;&nbsp;/&nbsp;\\  
-&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;d&nbsp;h&nbsp;&nbsp;&nbsp;i  
+&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;7&nbsp;&nbsp;&nbsp;8  
 &nbsp;&nbsp;&nbsp;\\&nbsp;/&nbsp;&nbsp;&nbsp;\\&nbsp;/  
-&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j  
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\&nbsp;&nbsp;&nbsp;/  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\&nbsp;/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5  
 
 **Input file**
 
