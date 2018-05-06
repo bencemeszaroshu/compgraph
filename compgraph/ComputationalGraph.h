@@ -10,7 +10,7 @@ struct AdjacentNodes;
 class ComputationalGraph
 {
 public:
-    ComputationalGraph(std::vector<AdjacentNodes> adjacencyList);
+    ComputationalGraph(std::vector<AdjacentNodes>& adjacencyList);
     const std::vector<IndependentNodes>& getIndependentNodesByDepth() const;
 private:
     std::vector<int> CalculateBottomNodes();

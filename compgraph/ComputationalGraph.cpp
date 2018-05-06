@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ComputationalGraph.h"
 
-ComputationalGraph::ComputationalGraph(std::vector<AdjacentNodes> nodes)
+ComputationalGraph::ComputationalGraph(std::vector<AdjacentNodes>& nodes)
 {
     adjacencyList = nodes;
     numberOfNodes = adjacencyList.size();
